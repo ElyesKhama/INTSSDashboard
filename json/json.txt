@@ -1,0 +1,78 @@
+{
+    "report" : [{
+        "team":"tss",
+        "incidents":[
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."},
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."},
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."}
+                    ],
+        "faults":   [
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."},
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."},
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."}
+                    ],
+        "changes":  [
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."},
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."},
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."}
+                    ],
+        "alarms":   [
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."},
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."},
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."}
+                    ]
+    },
+        {
+        "team":"int",
+        "incidents":[
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."}
+                    ],
+        "faults":   [
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."},
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."}
+                    ],
+        "changes":  [
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."},
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."},
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."}
+                    ],
+        "alarms":   [
+                    ]
+    },
+        {
+        "team":"pps",
+        "incidents":[
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."}
+                    ],
+        "faults":   [
+                    ],
+        "changes":  [
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."},
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."}
+                    ],
+        "alarms":   [
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."}
+                    ]
+    },
+        {
+        "team":"rti",
+        "incidents":[
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."}
+                    ],
+        "faults":   [
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."},
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."}
+                    ],
+        "changes":  [
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."},
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."},
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."}
+                    ],
+        "alarms":   [
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."},
+                    {"summary":"...","assignee":"...","priority":"...","SLA":"..."}
+                    ]
+    }
+    ],
+    "date": "2018-28-08 08:39:44"
+}
