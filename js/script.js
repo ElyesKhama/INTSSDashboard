@@ -1,3 +1,4 @@
+//global variables
 var timeoutID;
 var index = 0;
 var json = {
@@ -77,19 +78,20 @@ var json = {
     "date": "2018-28-08 08:39:44"
 };
 
+//constants
 const listTitles = ['incidents', 'faults', 'changes', 'alarms'];
-
+const delay = 10000;
 
 function updateTitle() {
-
     var elem;
-    for(var i=0;i<4;i++){
-        elem =  document.getElementById(listTitles[i]);
+    //make all titles normal again
+    for (var i = 0; i < 4; i++) {
+        elem = document.getElementById(listTitles[i]);
         elem.style.fontWeight = "normal";
         elem.style.fontSize = "1rem";
-
     }
 
+    //bold and zoom the current title
     var elemTitle = document.getElementById(listTitles[index]);
     elemTitle.style.fontWeight = "bold";
     elemTitle.style.fontSize = "50px";
@@ -98,6 +100,7 @@ function updateTitle() {
 function updateTables(index) {
     var countTimer = 0;
     for (var i = 0; i < 4; i++) {
+        //recover the whole json object about differents alarms
         var item = json.report[i];
         var bodyTable = "bodyTable" + i;
         var elemBodyTable = document.getElementById(bodyTable);
@@ -117,8 +120,10 @@ function updateTables(index) {
                 break;
         }
 
+        //remove all rows
         removeBodyRows(elemBodyTable);
 
+        //fill the table
         for (var j = 0; j < items.length; j++) {
             var line = elemBodyTable.insertRow(-1);
             var col0 = line.insertCell(0);
@@ -136,9 +141,6 @@ function updateTables(index) {
             var deadline = new Date(Date.parse(new Date()) + nbSeconds * 1000);
             initializeClock("clockdiv" + countTimer, deadline);
 
-
-            //insertDivs(nbSeconds, col3, col4, countTimer);
-
             countTimer++;
         }
     }
@@ -147,29 +149,16 @@ function updateTables(index) {
 function calculationSLA(endTime) {
     var dateNow = new Date();
     var dateEnd = new Date(endTime);
+
+    //calculate the nb of seconds between now and the end date
     var nbSeconds = Math.round((dateEnd - dateNow) / 1000);
     console.log(nbSeconds);
     return nbSeconds;
 }
 
-/* function insertDivs(nbSeconds, col3, col4, count) {
-    var divContainer = document.createElement('div');
-    divContainer.className = "container containerTimeCircle";
-    var divTimer = document.createElement('div');
-    divTimer.className = "container timerTest timerDiv";
-    divTimer.id = "timer" + count;
-    divTimer.setAttribute("data-timer", nbSeconds);
-    var divCircle = document.createElement('div');
-    divCircle.className = "circle";
-
-    var divInsertedContainer = col3.appendChild(divContainer);
-    var divInsertedTimer = divInsertedContainer.appendChild(divTimer);
-    col4.appendChild(divCircle);
-
-    createTimer("#"+divTimer.id);
-} */
-
 function createCountDown(parentElement, countTimer) {
+    //create the count down element
+
     var divClockDiv = document.createElement('div');
     divClockDiv.id = "clockdiv" + countTimer;  //TODO: + number 
     divClockDiv.className = "clockdiv";
@@ -244,16 +233,11 @@ function initializeClock(id, endtime) {
         hoursSpan.innerHTML = ('0' + time.hours).slice(-2);
         minutesSpan.innerHTML = ('0' + time.minutes).slice(-2);
         secondsSpan.innerHTML = ('0' + time.seconds).slice(-2);
-
-        /*if(t.seconds == 50){
-          secondsSpan.style = "background-color: blue";
-        }*/
-
         updateColor(time, hoursSpan, minutesSpan, secondsSpan);
 
         if (time.total <= 0) {
             clearInterval(timeinterval);
-        }
+        }   
     }
 
     updateClock();
@@ -265,6 +249,7 @@ function updateColor(time, hoursSpan, minutesSpan, secondsSpan) {
     var minutes = time.minutes;
     var seconds = time.seconds;
 
+    //from red to green
     var palette = [
         "#FF0000",
         "#F30101",
@@ -290,13 +275,11 @@ function updateColor(time, hoursSpan, minutesSpan, secondsSpan) {
         "#00FE14",
         "#01FF2B",
         "#01FB50"
-      ];
+    ];
 
     hoursSpan.style.backgroundColor = palette[hours];
     minutesSpan.style.backgroundColor = palette[hours];
     secondsSpan.style.backgroundColor = palette[hours];
-
-      
 }
 
 function updateTitleTimer() {
@@ -310,7 +293,7 @@ function updateTitleTimer() {
 
 function setIntervalUpdate() {
     updateTitleTimer();
-    timeoutID = window.setInterval(updateTitleTimer, 1000);
+    timeoutID = window.setInterval(updateTitleTimer, delay);
 }
 
 setIntervalUpdate();
