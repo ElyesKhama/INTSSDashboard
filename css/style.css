@@ -4,6 +4,14 @@
     float: right;
 }
 
+.titleContainer{
+    text-align:center;
+}
+
+.titleContainer > div{
+    display: inline-block;
+}
+
 .circle{
     border-radius:50%;
     width:40px;
@@ -24,4 +32,32 @@
     font-size: 40px;
     text-align: center;
     margin: auto;
+}
+
+/* --- CountDown Timer --- */
+.clockdiv{
+	font-family: sans-serif;
+	color: black;
+	display: inline-block;
+	font-weight: 100;
+	text-align: center;
+	font-size: 30px;
+}
+
+.clockdiv > div{
+	padding: 2px;
+	border-radius: 50%;
+	display: inline-block;  
+}
+
+.clockdiv div > span{
+	padding: 15px;
+	border-radius: 30%;
+	background: green;
+	display: inline-block;
+}
+
+.smalltext{
+	padding-top: 5px;
+	font-size: 16px;
 }
