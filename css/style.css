@@ -1,8 +1,13 @@
 .titleContainer{
-    text-align:center;
+	margin: auto;
+	text-align:center;
+	width: 50%;
+	height:75px;
 }
 
 .titleContainer > div{
+	line-height: 50%;	
+	padding: 15px;
     display: inline-block;
 }
 
@@ -14,11 +19,17 @@
 
 .tableContainer{
     width: 100%;    
-    height: 100%;
+	height: 100%;
+	border-style: solid;
+	border-color:#C8C8C8;
 }
 
 #timeRefresh{
 	font-weight: bold;
+}
+
+#refresh{
+	color:white;
 }
 
 .mainContainer{

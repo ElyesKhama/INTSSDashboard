@@ -1,16 +1,15 @@
 //global variables
-var timeoutID;
 var index = 0;
 var json = {
     "report": [{
         "team": "tss",
         "incidents": [
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T12:00:00" },
-            { "summary": "INC3", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T11:00:00" }
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T14:00:00" },
+            { "summary": "INC3", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T17:00:00" }
         ],
         "faults": [
-            { "summary": "FAU1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T12:00:00" },
-            { "summary": "FAU2", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T13:00:00" },
+            { "summary": "FAU1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T16:00:00" },
+            { "summary": "FAU2", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T15:00:00" },
             { "summary": "FAU3", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T14:00:00" }
         ],
         "changes": [
@@ -145,7 +144,7 @@ function updateTables(index) {
             }
         } else {
             var line = elemBodyTable.insertRow(-1);
-            line.innerHTML = "No " + listTitles[index] + " currently";  
+            line.innerHTML = "No " + listTitles[index] + " currently";
             line.style.fontStyle = "italic";
         }
     }
@@ -301,7 +300,8 @@ function updateTitleTimer() {
 
 function setIntervalUpdate() {
     updateTitleTimer();
-    timeoutID = window.setInterval(updateTitleTimer, delay);
+    //periodic function
+    var timeoutID = window.setInterval(updateTitleTimer, delay);
 }
 
 setIntervalUpdate();
