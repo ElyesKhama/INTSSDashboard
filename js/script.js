@@ -5,7 +5,7 @@ var json = {
     "report": [{
         "team": "tss",
         "incidents": [
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T10:00:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T12:00:00" },
             { "summary": "INC3", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T11:00:00" }
         ],
         "faults": [
@@ -123,24 +123,30 @@ function updateTables(index) {
         //remove all rows
         removeBodyRows(elemBodyTable);
 
-        //fill the table
-        for (var j = 0; j < items.length; j++) {
+        if (items.length != 0) {
+            //fill the table
+            for (var j = 0; j < items.length; j++) {
+                var line = elemBodyTable.insertRow(-1);
+                var col0 = line.insertCell(0);
+                var col1 = line.insertCell(1);
+                var col2 = line.insertCell(2);
+                var col3 = line.insertCell(3);
+                col0.innerHTML += items[j].summary;
+                col1.innerHTML += items[j].assignee;
+                col2.innerHTML += items[j].priority;
+
+                var nbSeconds = calculationSLA(items[j].SLA);
+
+                createCountDown(col3, countTimer);
+                var deadline = new Date(Date.parse(new Date()) + nbSeconds * 1000);
+                initializeClock("clockdiv" + countTimer, deadline);
+
+                countTimer++;
+            }
+        } else {
             var line = elemBodyTable.insertRow(-1);
-            var col0 = line.insertCell(0);
-            var col1 = line.insertCell(1);
-            var col2 = line.insertCell(2);
-            var col3 = line.insertCell(3);
-            col0.innerHTML += items[j].summary;
-            col1.innerHTML += items[j].assignee;
-            col2.innerHTML += items[j].priority;
-
-            var nbSeconds = calculationSLA(items[j].SLA);
-
-            createCountDown(col3, countTimer);
-            var deadline = new Date(Date.parse(new Date()) + nbSeconds * 1000);
-            initializeClock("clockdiv" + countTimer, deadline);
-
-            countTimer++;
+            line.innerHTML = "No " + listTitles[index] + " currently";  
+            line.style.fontStyle = "italic";
         }
     }
 }
@@ -164,21 +170,21 @@ function createCountDown(parentElement, countTimer) {
 
     var divContainerHours = document.createElement('div');
     var spanHours = createSpan("hours");
-    var divHours = createDiv("Hours");
+    // var divHours = createDiv("Hours");
     divContainerHours.appendChild(spanHours);
-    divContainerHours.appendChild(divHours);
+    //  divContainerHours.appendChild(divHours);
 
     var divContainerMinutes = document.createElement('div');
     var spanMinutes = createSpan("minutes");
-    var divMinutes = createDiv("Minutes");
+    // var divMinutes = createDiv("Minutes");
     divContainerMinutes.appendChild(spanMinutes);
-    divContainerMinutes.appendChild(divMinutes);
+    //  divContainerMinutes.appendChild(divMinutes);
 
     var divContainerSeconds = document.createElement('div');
     var spanSeconds = createSpan("seconds");
-    var divSeconds = createDiv("Seconds");
+    // var divSeconds = createDiv("Seconds");
     divContainerSeconds.appendChild(spanSeconds);
-    divContainerSeconds.appendChild(divSeconds);
+    //   divContainerSeconds.appendChild(divSeconds);
 
     divClockDiv.appendChild(divContainerHours);
     divClockDiv.appendChild(divContainerMinutes);
@@ -229,24 +235,22 @@ function initializeClock(id, endtime) {
     function updateClock() {
         var time = getTimeRemaining(endtime);
 
-        hoursSpan.innerHTML = ('0' + time.hours).slice(-2);
-        minutesSpan.innerHTML = ('0' + time.minutes).slice(-2);
-        secondsSpan.innerHTML = ('0' + time.seconds).slice(-2);
-        updateColor(time, hoursSpan, minutesSpan, secondsSpan);
+        hoursSpan.innerHTML = ('0' + time.hours).slice(-2) + "h";
+        minutesSpan.innerHTML = ('0' + time.minutes).slice(-2) + "m";
+        secondsSpan.innerHTML = ('0' + time.seconds).slice(-2) + "s";
+        updateColor(time, clock);
 
         if (time.total <= 0) {
             clearInterval(timeinterval);
-        }   
+        }
     }
 
     updateClock();
     var timeinterval = setInterval(updateClock, 1000);
 }
 
-function updateColor(time, hoursSpan, minutesSpan, secondsSpan) {
+function updateColor(time, clockDiv) {
     var hours = time.hours;
-    var minutes = time.minutes;
-    var seconds = time.seconds;
 
     //from red to green
     var palette = [
@@ -276,15 +280,13 @@ function updateColor(time, hoursSpan, minutesSpan, secondsSpan) {
         "#01FB50"
     ];
 
-    hoursSpan.style.backgroundColor = palette[hours];
-    minutesSpan.style.backgroundColor = palette[hours];
-    secondsSpan.style.backgroundColor = palette[hours];
+    clockDiv.style.backgroundColor = palette[hours];
 }
 
-function updateTimeRefresh(){
+function updateTimeRefresh() {
     var span = document.getElementById("timeRefresh");
     var date = new Date();
-    span.innerText = date.toTimeString().substr(0,8);
+    span.innerText = date.toTimeString().substr(0, 8);
 }
 
 function updateTitleTimer() {

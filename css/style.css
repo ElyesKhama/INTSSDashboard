@@ -29,9 +29,10 @@
 	font-family: sans-serif;
 	color: black;
 	display: inline-block;
-	font-weight: 100;
+	font-weight: 500;
 	text-align: centrer;
 	font-size: 15px;
+	border-radius: 15px;
 }
 
 .clockdiv > div{
@@ -41,9 +42,8 @@
 }
 
 .clockdiv div > span{
-	padding: 15px;
+	padding: 10px;
 	border-radius: 30%;
-	background: green;
 	display: inline-block;
 }
 
