@@ -5,37 +5,37 @@ var json = {
     "report": [{
         "team": "tss",
         "incidents": [
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-29T16:00:00" },
-            { "summary": "INC3", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-29T16:00:00" }
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T10:00:00" },
+            { "summary": "INC3", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T11:00:00" }
         ],
         "faults": [
-            { "summary": "FAU1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-29T17:00:00" },
-            { "summary": "FAU2", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-29T18:00:00" },
-            { "summary": "FAU3", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-29T19:00:00" }
+            { "summary": "FAU1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T12:00:00" },
+            { "summary": "FAU2", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T13:00:00" },
+            { "summary": "FAU3", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T14:00:00" }
         ],
         "changes": [
-            { "summary": "CHA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-29T20:00:00" },
-            { "summary": "CHA3", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-29T21:00:00" }
+            { "summary": "CHA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T15:00:00" },
+            { "summary": "CHA3", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T16:00:00" }
         ],
         "alarms": [
-            { "summary": "ALA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-29T22:00:00" },
-            { "summary": "ALA2", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-29T23:00:00" },
-            { "summary": "ALA3", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T00:00:00" }
+            { "summary": "ALA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T17:00:00" },
+            { "summary": "ALA2", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T18:00:00" },
+            { "summary": "ALA3", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T19:00:00" }
         ]
     },
     {
         "team": "int",
         "incidents": [
-            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-08-30T01:00:00" }
+            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-08-30T20:00:00" }
         ],
         "faults": [
-            { "summary": "FAU1", "assignee": "INT", "priority": "medium", "SLA": "2018-08-30T02:00:00" },
-            { "summary": "FAU2", "assignee": "INT", "priority": "medium", "SLA": "2018-08-30T03:00:00" }
+            { "summary": "FAU1", "assignee": "INT", "priority": "medium", "SLA": "2018-08-30T21:00:00" },
+            { "summary": "FAU2", "assignee": "INT", "priority": "medium", "SLA": "2018-08-30T22:00:00" }
         ],
         "changes": [
-            { "summary": "CHA1", "assignee": "INT", "priority": "medium", "SLA": "2018-08-30T04:00:00" },
-            { "summary": "CHA2", "assignee": "INT", "priority": "medium", "SLA": "2018-08-30T05:00:00" },
-            { "summary": "CHA3", "assignee": "INT", "priority": "medium", "SLA": "2018-08-30T06:00:00" }
+            { "summary": "CHA1", "assignee": "INT", "priority": "medium", "SLA": "2018-08-30T23:00:00" },
+            { "summary": "CHA2", "assignee": "INT", "priority": "medium", "SLA": "2018-08-30T24:00:00" },
+            { "summary": "CHA3", "assignee": "INT", "priority": "medium", "SLA": "2018-08-31T01:00:00" }
         ],
         "alarms": [
         ]
@@ -43,35 +43,35 @@ var json = {
     {
         "team": "pps",
         "incidents": [
-            { "summary": "INC1", "assignee": "PPS", "priority": "medium", "SLA": "2018-08-30T07:00:00" }
+            { "summary": "INC1", "assignee": "PPS", "priority": "medium", "SLA": "2018-08-31T02:00:00" }
         ],
         "faults": [
         ],
         "changes": [
-            { "summary": "CHA1", "assignee": "PPS", "priority": "medium", "SLA": "2018-08-30T08:00:00" },
-            { "summary": "CHA2", "assignee": "PPS", "priority": "medium", "SLA": "2018-08-30T09:00:00" }
+            { "summary": "CHA1", "assignee": "PPS", "priority": "medium", "SLA": "2018-08-31T03:00:00" },
+            { "summary": "CHA2", "assignee": "PPS", "priority": "medium", "SLA": "2018-08-31T04:00:00" }
         ],
         "alarms": [
-            { "summary": "ALA1", "assignee": "PPS", "priority": "medium", "SLA": "2018-08-30T10:00:00" }
+            { "summary": "ALA1", "assignee": "PPS", "priority": "medium", "SLA": "2018-08-31T05:00:00" }
         ]
     },
     {
         "team": "rti",
         "incidents": [
-            { "summary": "INC1", "assignee": "RTI", "priority": "medium", "SLA": "2018-08-30T11:00:00" }
+            { "summary": "INC1", "assignee": "RTI", "priority": "medium", "SLA": "2018-08-31T06:00:00" }
         ],
         "faults": [
-            { "summary": "FAU1", "assignee": "RTI", "priority": "medium", "SLA": "2018-08-30T12:00:00" },
-            { "summary": "FAU2", "assignee": "RTI", "priority": "medium", "SLA": "2018-08-30T13:00:00" }
+            { "summary": "FAU1", "assignee": "RTI", "priority": "medium", "SLA": "2018-08-31T07:00:00" },
+            { "summary": "FAU2", "assignee": "RTI", "priority": "medium", "SLA": "2018-08-31T08:00:00" }
         ],
         "changes": [
-            { "summary": "CHA1", "assignee": "RTI", "priority": "medium", "SLA": "2018-08-30T14:00:00" },
-            { "summary": "CHA2", "assignee": "RTI", "priority": "medium", "SLA": "2018-08-30T14:00:00" },
-            { "summary": "CHA3", "assignee": "RTI", "priority": "medium", "SLA": "2018-08-30T14:00:00" }
+            { "summary": "CHA1", "assignee": "RTI", "priority": "medium", "SLA": "2018-08-31T08:00:00" },
+            { "summary": "CHA2", "assignee": "RTI", "priority": "medium", "SLA": "2018-08-31T08:00:00" },
+            { "summary": "CHA3", "assignee": "RTI", "priority": "medium", "SLA": "2018-08-31T08:00:00" }
         ],
         "alarms": [
-            { "summary": "ALA1", "assignee": "RTI", "priority": "medium", "SLA": "2018-08-30T14:00:00" },
-            { "summary": "ALA2", "assignee": "RTI", "priority": "medium", "SLA": "2018-08-30T14:00:00" }
+            { "summary": "ALA1", "assignee": "RTI", "priority": "medium", "SLA": "2018-08-31T08:00:00" },
+            { "summary": "ALA2", "assignee": "RTI", "priority": "medium", "SLA": "2018-08-31T08:00:00" }
         ]
     }
     ],
@@ -130,7 +130,6 @@ function updateTables(index) {
             var col1 = line.insertCell(1);
             var col2 = line.insertCell(2);
             var col3 = line.insertCell(3);
-            var col4 = line.insertCell(4);
             col0.innerHTML += items[j].summary;
             col1.innerHTML += items[j].assignee;
             col2.innerHTML += items[j].priority;
@@ -282,7 +281,14 @@ function updateColor(time, hoursSpan, minutesSpan, secondsSpan) {
     secondsSpan.style.backgroundColor = palette[hours];
 }
 
+function updateTimeRefresh(){
+    var span = document.getElementById("timeRefresh");
+    var date = new Date();
+    span.innerText = date.toTimeString().substr(0,8);
+}
+
 function updateTitleTimer() {
+    updateTimeRefresh();
     updateTitle();
     updateTables(index);
     index++;

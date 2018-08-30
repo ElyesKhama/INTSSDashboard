@@ -17,6 +17,13 @@
     height: 100%;
 }
 
+#timeRefresh{
+	font-weight: bold;
+}
+
+.mainContainer{
+	background-color: #EFEFEF;
+}
 /* --- CountDown Timer --- */
 .clockdiv{
 	font-family: sans-serif;
