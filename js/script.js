@@ -4,17 +4,17 @@ var json = {
     "report": [{
         "team": "tss",
         "incidents": [
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T14:00:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T17:02:00" },
             { "summary": "INC3", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T17:00:00" }
         ],
         "faults": [
-            { "summary": "FAU1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T16:00:00" },
-            { "summary": "FAU2", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T15:00:00" },
-            { "summary": "FAU3", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T14:00:00" }
+            { "summary": "FAU1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T19:00:00" },
+            { "summary": "FAU2", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T18:00:00" },
+            { "summary": "FAU3", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T19:00:00" }
         ],
         "changes": [
-            { "summary": "CHA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T15:00:00" },
-            { "summary": "CHA3", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T16:00:00" }
+            { "summary": "CHA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T20:00:00" },
+            { "summary": "CHA3", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T22:00:00" }
         ],
         "alarms": [
             { "summary": "ALA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-30T17:00:00" },
@@ -118,6 +118,9 @@ function updateTables(index) {
                 items = item.alarms;
                 break;
         }
+        var badgeNumber = "badgeNumber"+i;
+        var elemBadgeNumber = document.getElementById(badgeNumber);
+        elemBadgeNumber.innerText = items.length;
 
         //remove all rows
         removeBodyRows(elemBodyTable);
