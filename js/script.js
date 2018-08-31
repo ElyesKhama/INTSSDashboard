@@ -4,21 +4,29 @@ var json = {
     "report": [{
         "team": "tss",
         "incidents": [
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
 
-            { "summary": "INC18", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T12:02:00" }
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T13:02:00" },
+            { "summary": "INC18", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T15:02:00" }
 
         ],
         "faults": [
-            { "summary": "FAU1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T12:01:00" },
-            { "summary": "FAU2", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T12:00:59" },
+            { "summary": "FAU1", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T18:01:00" },
+            { "summary": "FAU2", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T14:00:59" },
             { "summary": "FAU3", "assignee": "TSS", "priority": "medium", "SLA": "2018-08-31T14:00:00" }
         ],
         "changes": [
@@ -35,6 +43,7 @@ var json = {
         "team": "int",
         "incidents": [
             { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-08-31T20:00:00" },
+        
             { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-08-31T20:00:00" }
         ],
         "faults": [
@@ -171,15 +180,14 @@ function updateTables(index) {
                 }
                 else {
                     var line;
-                    var div;
+                    var col;
                     if (first == true) {    //first time you enter in this portion of code
                         line = elemBodyTable.insertRow(-1);
-                        div = document.createElement('div');
+                        col = line.insertCell(0);
                         first = false;
                     }
-                    div.innerHTML += items[j].summary + " - ";
-                    line.appendChild(div);
-
+                    col.innerHTML += items[j].summary + " - ";
+                    col.setAttribute("colspan",4);
                 }
                 countTimer++;
             }
@@ -190,10 +198,6 @@ function updateTables(index) {
         }
     }
 }
-
-
-
-
 
 function calculationSLA(endTime) {
     var dateNow = new Date();
@@ -333,7 +337,7 @@ function updateTitleTimer() {
 
 function setIntervalUpdate() {
     updateTitleTimer();
-    //periodic function
+    //periodic functionl
     var timeoutID = window.setInterval(updateTitleTimer, delay);
 }
 
