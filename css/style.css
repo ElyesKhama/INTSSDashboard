@@ -34,6 +34,20 @@
 .mainContainer{
 	background-color: #EFEFEF;
 }
+
+/* --- Disable animation on progress bar ---*/
+.progress-bar {
+	-webkit-transition: initial !important;
+	-o-transition: initial !important;
+	transition: initial !important;
+}
+  
+  .progress-bar.active, .progress.active .progress-bar {
+	-webkit-animation: initial !important;
+	-o-animation: initial !important;
+	animation: initial !important;
+}
+
 /* --- CountDown Timer --- */
 .clockdiv{
 	font-family: sans-serif;
