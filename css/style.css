@@ -1,8 +1,20 @@
+body{
+	font-size: 0.7rem;
+}
+
+.table td{
+	padding: 0.2rem;
+}
+
 .titleContainer{
 	margin: auto;
 	text-align:center;
 	width: 50%;
-	height:75px;
+	background-color: white;
+}
+
+.table thead th {
+    vertical-align: 0;
 }
 
 .titleContainer > div{
@@ -11,9 +23,9 @@
     display: inline-block;
 }
 
-.titleTeam{
+.titleItem{
     text-align: center;
-    font-size: 50px;
+    font-size: 20px;
 }
 
 .tableContainer{
@@ -55,7 +67,7 @@
 	display: inline-block;
 	font-weight: 500;
 	text-align: centrer;
-	font-size: 15px;
+	font-size: 10px;
 	border-radius: 15px;
 }
 
@@ -73,5 +85,5 @@
 
 .smalltext{
 	padding-top: 5px;
-	font-size: 12px;
+	font-size: 8px;
 }

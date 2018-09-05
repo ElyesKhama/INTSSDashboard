@@ -5,8 +5,16 @@ var json = {
     "report": [{
         "team": "tss",
         "incidents": [
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T12:55:00" },
+            { "summary": "INC1111", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T12:55:00" },
             { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T23:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T23:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T23:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T23:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T23:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T23:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T23:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T23:02:00" },
+
             { "summary": "INC18", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-06T7:02:00" }
         ],
         "faults": [
@@ -16,6 +24,12 @@ var json = {
         ],
         "changes": [
             { "summary": "CHA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T17:00:00" },
+            { "summary": "CHA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T17:00:00" },
+            { "summary": "CHA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T17:00:00" },
+            { "summary": "CHA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T17:00:00" },
+            { "summary": "CHA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T17:00:00" },
+            { "summary": "CHA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T17:00:00" },
+
             { "summary": "CHA3", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T16:00:00" }
         ],
         "alarms": [
@@ -29,6 +43,20 @@ var json = {
         "incidents": [
             { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
             { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
+
             { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T24:00:00" }
         ],
         "faults": [
@@ -83,60 +111,39 @@ var json = {
 
 //constants
 const listTitles = ['incidents', 'faults', 'changes', 'alarms'];
+const listTeams = ['TSS', 'INT', 'PPS', 'RTI'];
 const delay = 15500;
-const nbMaxItems = 3;
+const nbMaxItems = 6;
 
 function updateTitle() {
-    console.log("[BEGINING] index in updateTitle ::: " + index);
     var elem;
     //make all titles normal again
     for (var i = 0; i < 4; i++) {
-        elem = document.getElementById(listTitles[i]);
+        elem = document.getElementById(listTeams[i]);
         elem.style.fontWeight = "normal";
         elem.style.fontSize = "1rem";
     }
 
     //bold and zoom the current title
-    var elemTitle = document.getElementById(listTitles[index]);
+    var elemTitle = document.getElementById(listTeams[index]);
     elemTitle.style.fontWeight = "bold";
     elemTitle.style.fontSize = "50px";
 }
 
-function updateTables(index) {
+function updateTables2(index) {
+
     var countTimer = 0;
+
+    //recover all of the incidents/faults/alarms/changes depending on the current index
+    var item = json.report[index];
+
     for (var i = 0; i < 4; i++) {
-        //recover the whole json object about differents alarms
-        var item = json.report[i];
         var bodyTable = "bodyTable" + i;
         var elemBodyTable = document.getElementById(bodyTable);
-        var items = 0;
-        switch (index) {
-            case 0:
-                items = item.incidents;
-                break;
-            case 1:
-                items = item.faults;
-                break;
-            case 2:
-                items = item.changes;
-                break;
-            case 3:
-                items = item.alarms;
-                break;
-        }
+        var type = listTitles[i];
+        var items = item[type];
 
-        //sort the table according to the SLA
-        items.sort(function (a, b) {
-            var aTime = a.SLA;
-            var bTime = b.SLA;
-            if (aTime < bTime) {
-                return -1;
-            } else if (aTime > bTime) {
-                return 1;
-            } else {
-                return 0;
-            }
-        });
+        items = sortArray(items);
 
         var badgeNumber = "badgeNumber" + i;
         var elemBadgeNumber = document.getElementById(badgeNumber);
@@ -145,26 +152,15 @@ function updateTables(index) {
         //remove all rows
         removeBodyRows(elemBodyTable);
         first = true;
-        if (items.length != 0) {
+
+        if (items.length != 0) {                        //TODO: Factorize
             //fill the table
             for (var j = 0; j < items.length; j++) {
+                console.log("boucle");
                 if (j < nbMaxItems) {   //max items to display entirely
-                    var line = elemBodyTable.insertRow(-1);
-                    var col0 = line.insertCell(0);
-                    var col1 = line.insertCell(1);
-                    var col2 = line.insertCell(2);
-                    var col3 = line.insertCell(3);
-                    col0.innerHTML += items[j].summary;
-                    col1.innerHTML += items[j].assignee;
-                    col2.innerHTML += items[j].priority;
-
-                    var nbSeconds = calculationSLA(items[j].SLA);
-
-                    createCountDown(col3, countTimer);
-                    var deadline = new Date(Date.parse(new Date()) + nbSeconds * 1000);
-                    initializeClock("clockdiv" + countTimer, deadline);
+                    fillTable(elemBodyTable, items[j], countTimer);
                 }
-                else {
+                else {      //too many items 
                     var line;
                     var col;
                     if (first == true) {    //first time you enter in this portion of code
@@ -179,10 +175,43 @@ function updateTables(index) {
             }
         } else {        //no items
             var line = elemBodyTable.insertRow(-1);
-            line.innerHTML = "No " + listTitles[index] + " currently";
+            line.innerHTML = "No " + listTitles[i] + " currently";
             line.style.fontStyle = "italic";
         }
     }
+}
+
+function sortArray(array) {
+    //sort the table according to the SLA
+    array.sort(function (a, b) {
+        var aTime = a.SLA;
+        var bTime = b.SLA;
+        if (aTime < bTime) {
+            return -1;
+        } else if (aTime > bTime) {
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+
+    return array;
+}
+
+function fillTable(elemBodyTable, item, countTimer) {
+    var line = elemBodyTable.insertRow(-1);
+    var col0 = line.insertCell(0);
+    var col1 = line.insertCell(1);
+    var col2 = line.insertCell(2);
+    var col3 = line.insertCell(3);
+    col0.innerHTML += item.summary;
+    col1.innerHTML += item.assignee;
+    col2.innerHTML += item.priority;
+
+    var nbSeconds = calculationSLA(item.SLA);
+    createCountDown(col3, countTimer);
+    var deadline = new Date(Date.parse(new Date()) + nbSeconds * 1000);
+    initializeClock("clockdiv" + countTimer, deadline);
 }
 
 function calculationSLA(endTime) {
@@ -327,13 +356,13 @@ function updateTitleTimer() {       //TODO: Factorize
     }
     updateTimeRefresh();
     updateTitle();
-    updateTables(index);
+    updateTables2(index);
     resetProgressBar();
     first = false;
 }
 
-function updateTitleTimer2() {      //TODO: Factorize
-    
+function updateTitleTimer2() {     //TODO: Factorize
+
     if (index == 0) {
         index = 4;
     }
@@ -341,7 +370,7 @@ function updateTitleTimer2() {      //TODO: Factorize
 
     updateTimeRefresh();
     updateTitle();
-    updateTables(index);
+    updateTables2(index);
     resetProgressBar();
     first = false;
 }
