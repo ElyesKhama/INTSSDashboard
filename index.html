@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/TimeCircles.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
 </head>
 
 <body>
@@ -15,6 +17,9 @@
         <a class="navbar-brand" href="#">
             <img src="img/Logo.png" height="30" width="110">
         </a>
+
+        <i class="far fa-moon" id="buttonChangeTheme"></i>
+
         <div class="titleContainer" style="border-style: solid">
             <div id="TSS">
                 TSS
@@ -43,10 +48,7 @@
             aria-valuemax="100"></div>
     </div>
 
-
-
-
-    <div class="container-fluid mainContainer">
+    <div class="container-fluid" id="mainContainer">
         <div class="row">
             <div class="col">
                 <div class="container-fluid">
@@ -111,20 +113,22 @@
             <div class="col">
                 <div class="container-fluid">
                     <p class="titleItem">Alarms</p>
-                    <table class="table tableContainer">
-                        <thead class="bg-light">
-                            <tr>
-                                <th>Summary</th>
-                                <th>Assignee</th>
-                                <th>Priority</th>
-                                <th> SLA
-                                    <span class="badge badge-warning" id="badgeNumber3" style="float: right; font-size:14px;"></span>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody id="bodyTable3">
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table tableContainer">
+                            <thead class="bg-light">
+                                <tr>
+                                    <th>Summary</th>
+                                    <th>Assignee</th>
+                                    <th>Priority</th>
+                                    <th> SLA
+                                        <span class="badge badge-warning" id="badgeNumber3" style="float: right; font-size:14px;"></span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="bodyTable3">
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

@@ -5,68 +5,59 @@ var json = {
     "report": [{
         "team": "tss",
         "incidents": [
-            { "summary": "INC1111", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T12:55:00" },
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T23:02:00" },
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T23:02:00" },
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T23:02:00" },
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T23:02:00" },
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T23:02:00" },
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T23:02:00" },
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T23:02:00" },
-            { "summary": "INC1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T23:02:00" },
-
-            { "summary": "INC18", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-06T7:02:00" }
+            { "summary": "INC1111", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-06T10:00:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-06T11:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-06T12:02:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-07T00:02:00" },
+            { "summary": "INC18", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-07T03:02:00" }
         ],
         "faults": [
-            { "summary": "FAU1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T18:01:00" },
-            { "summary": "FAU2", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T15:00:59" },
-            { "summary": "FAU3", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-06T05:00:00" }
+            { "summary": "FAU1", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-06T18:01:00" },
+            { "summary": "FAU2", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-06T15:00:59" },
+            { "summary": "FAU3", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-07T05:00:00" }
         ],
         "changes": [
-            { "summary": "CHA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T17:00:00" },
-            { "summary": "CHA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T17:00:00" },
-            { "summary": "CHA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T17:00:00" },
-            { "summary": "CHA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T17:00:00" },
-            { "summary": "CHA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T17:00:00" },
-            { "summary": "CHA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T17:00:00" },
-
-            { "summary": "CHA3", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T16:00:00" }
+            { "summary": "CHA1", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-06T17:00:00" },
+            { "summary": "CHA1", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-06T17:00:00" },
+            { "summary": "CHA1", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-07T07:00:00" },
+            { "summary": "CHA1", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-07T07:00:00" },
+            { "summary": "CHA3", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-07T06:00:00" }
         ],
         "alarms": [
-            { "summary": "ALA1", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T17:00:00" },
-            { "summary": "ALA2", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T18:00:00" },
-            { "summary": "ALA3", "assignee": "TSS", "priority": "medium", "SLA": "2018-09-05T19:00:00" }
+            { "summary": "ALA1", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-06T17:00:00" },
+            { "summary": "ALA2", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-06T18:00:00" },
+            { "summary": "ALA3", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-06T19:00:00" }
         ]
     },
     {
         "team": "int",
         "incidents": [
-            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
-            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
-            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
-            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
-            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
-            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
-            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
-            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
-            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
-            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
-            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
-            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
-            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
-            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
-            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T20:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T20:00:00" },
 
-            { "summary": "INC1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T24:00:00" }
+            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T24:00:00" }
         ],
         "faults": [
-            { "summary": "FAU1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T21:00:00" },
-            { "summary": "FAU2", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T22:00:00" }
+            { "summary": "FAU1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T21:00:00" },
+            { "summary": "FAU2", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T22:00:00" }
         ],
         "changes": [
-            { "summary": "CHA1", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T23:00:00" },
-            { "summary": "CHA2", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T12:00:00" },
-            { "summary": "CHA3", "assignee": "INT", "priority": "medium", "SLA": "2018-09-05T00:00:00" }
+            { "summary": "CHA1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T23:00:00" },
+            { "summary": "CHA2", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-06T12:00:00" },
+            { "summary": "CHA3", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-07T00:00:00" }
         ],
         "alarms": [
         ]
@@ -74,35 +65,35 @@ var json = {
     {
         "team": "pps",
         "incidents": [
-            { "summary": "INC1", "assignee": "PPS", "priority": "medium", "SLA": "2018-09-05T19:00:00" }
+            { "summary": "INC1", "assignee": "PPS", "priority": "Medium", "SLA": "2018-09-06T19:00:00" }
         ],
         "faults": [
         ],
         "changes": [
-            { "summary": "CHA1", "assignee": "PPS", "priority": "medium", "SLA": "2018-09-05T13:00:00" },
-            { "summary": "CHA2", "assignee": "PPS", "priority": "medium", "SLA": "2018-09-05T14:00:00" }
+            { "summary": "CHA1", "assignee": "PPS", "priority": "Medium", "SLA": "2018-09-06T13:00:00" },
+            { "summary": "CHA2", "assignee": "PPS", "priority": "Medium", "SLA": "2018-09-06T14:00:00" }
         ],
         "alarms": [
-            { "summary": "ALA1", "assignee": "PPS", "priority": "medium", "SLA": "2018-09-05T15:00:00" }
+            { "summary": "ALA1", "assignee": "PPS", "priority": "Medium", "SLA": "2018-09-06T15:00:00" }
         ]
     },
     {
         "team": "rti",
         "incidents": [
-            { "summary": "INC1", "assignee": "RTI", "priority": "medium", "SLA": "2018-09-05T16:00:00" }
+            { "summary": "INC1", "assignee": "RTI", "priority": "Medium", "SLA": "2018-09-06T16:00:00" }
         ],
         "faults": [
-            { "summary": "FAU1", "assignee": "RTI", "priority": "medium", "SLA": "2018-09-05T17:00:00" },
-            { "summary": "FAU2", "assignee": "RTI", "priority": "medium", "SLA": "2018-09-05T12:00:00" }
+            { "summary": "FAU1", "assignee": "RTI", "priority": "Medium", "SLA": "2018-09-06T17:00:00" },
+            { "summary": "FAU2", "assignee": "RTI", "priority": "Medium", "SLA": "2018-09-06T12:00:00" }
         ],
         "changes": [
-            { "summary": "CHA1", "assignee": "RTI", "priority": "medium", "SLA": "2018-09-05T18:00:00" },
-            { "summary": "CHA2", "assignee": "RTI", "priority": "medium", "SLA": "2018-09-05T18:00:00" },
-            { "summary": "CHA3", "assignee": "RTI", "priority": "medium", "SLA": "2018-09-05T18:00:00" }
+            { "summary": "CHA1", "assignee": "RTI", "priority": "Medium", "SLA": "2018-09-06T18:00:00" },
+            { "summary": "CHA2", "assignee": "RTI", "priority": "Medium", "SLA": "2018-09-06T18:00:00" },
+            { "summary": "CHA3", "assignee": "RTI", "priority": "Medium", "SLA": "2018-09-06T18:00:00" }
         ],
         "alarms": [
-            { "summary": "ALA1", "assignee": "RTI", "priority": "medium", "SLA": "2018-09-05T11:00:00" },
-            { "summary": "ALA2", "assignee": "RTI", "priority": "medium", "SLA": "2018-09-05T15:00:00" }
+            { "summary": "ALA1", "assignee": "RTI", "priority": "Medium", "SLA": "2018-09-06T11:00:00" },
+            { "summary": "ALA2", "assignee": "RTI", "priority": "Medium", "SLA": "2018-09-06T15:00:00" }
         ]
     }
     ],
@@ -112,7 +103,7 @@ var json = {
 //constants
 const listTitles = ['incidents', 'faults', 'changes', 'alarms'];
 const listTeams = ['TSS', 'INT', 'PPS', 'RTI'];
-const delay = 15500;
+const delay = 150500;
 const nbMaxItems = 6;
 
 function updateTitle() {
@@ -175,8 +166,10 @@ function updateTables2(index) {
             }
         } else {        //no items
             var line = elemBodyTable.insertRow(-1);
-            line.innerHTML = "No " + listTitles[i] + " currently";
-            line.style.fontStyle = "italic";
+            var col = line.insertCell(0);
+            col.innerHTML = "No " + listTitles[i] + " currently";
+            col.setAttribute("colspan", 4);
+            col.style.fontStyle = "italic";
         }
     }
 }
@@ -405,4 +398,31 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
+function changeColor() {
+
+    var backgroundColor = getComputedStyle(document.getElementById("mainContainer")).backgroundColor;
+    var tablesContainer = document.getElementsByClassName("tableContainer");
+
+    if (backgroundColor == 'rgb(0, 0, 0)') {        //background is black
+        document.getElementById("mainContainer").style.backgroundColor = "white";
+        [].forEach.call(tablesContainer, function (el) {
+            el.style.color = "black";
+        });
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+    }
+    else {      //background is white
+        document.getElementById("mainContainer").style.backgroundColor = "black";
+        [].forEach.call(tablesContainer, function (el) {
+            el.style.color = "white";
+        });
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+    }
+}
+
 setIntervalUpdate();
+
+document.getElementById("buttonChangeTheme").onclick = function () {
+    changeColor();
+}
