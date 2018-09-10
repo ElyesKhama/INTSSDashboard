@@ -32,7 +32,7 @@ body{
 
 .titleItem{
     text-align: center;
-	font-size: 30px;
+	font-size: 32px;
 }
 
 .tableContainer{
@@ -90,3 +90,34 @@ body{
 	border-radius: 30%;
 	display: inline-block;
 }
+
+/* --- Animation --- */
+.scale-up-center {
+	margin: auto;
+	text-align: center;
+	-webkit-animation: scale-up-center 1s linear both;
+	animation: scale-up-center 1s linear both;
+  }
+  
+  @-webkit-keyframes scale-up-center {
+	0% {
+	  -webkit-transform: scale(0.5);
+	  transform: scale(0.5);
+	}
+	100% {
+	  -webkit-transform: scale(1);
+	  transform: scale(1);
+	}
+  }
+  
+  @keyframes scale-up-center {
+	0% {
+	  -webkit-transform: scale(0.5);
+	  transform: scale(0.5);
+	}
+	100% {
+	  -webkit-transform: scale(1);
+	  transform: scale(1);
+	}
+  }
+  
