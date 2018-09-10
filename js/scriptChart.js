@@ -4,7 +4,7 @@ const numberVariation = 20;
 const numberOrigin = -10;
 
 //move this global variables
-var valueUpdate = [0,20,10,15];
+var valueUpdate = [0, 20, 10, 15];
 var valueUpdate22 = 20;
 var option;
 
@@ -13,8 +13,8 @@ var option;
 
 //calculate a random integer between the specified numbers
 function calculateRandomNumber() {
-    for(var i=0;i<valueUpdate.length;i++){
-        valueUpdate[i] +=  Math.random() * numberVariation + numberOrigin;
+    for (var i = 0; i < valueUpdate.length; i++) {
+        valueUpdate[i] += Math.random() * numberVariation + numberOrigin;
     }
 
     return valueUpdate;
@@ -38,7 +38,7 @@ function calculateData() {
     var data2 = [];
     var data3 = [];
 
-        for (var i = 0; i < 24 * 2 * 20; i++) {
+    for (var i = 0; i < 24 * 2 * 20; i++) {
         var dateTmp = new Date(date.setMinutes(date.getMinutes() + 30));            //TODO: Factorize
 
         calculateRandomNumber();
@@ -61,16 +61,22 @@ function calculateData() {
 var dataFinal = calculateData();
 
 option = {
+    backgroundColor: 'rgb(0,0,0)',
+    textStyle: { color: 'rgb(255,255,255)' },
     title: {
-        text: 'Evolution'
+        text: 'Evolution',
+        textStyle: { color: 'rgb(255,255,255)' }
     },
     legend: {
-        data: ['Incidents', 'Faults', 'Changes', 'Alarms']
+        data: ['Incidents', 'Faults', 'Changes', 'Alarms'],
+        textStyle: {  color: 'rgb(255,255,255)', fontWeight: 'bold' },
+        itemWidth: 35,
+        itemHeight: 35
     },
     xAxis: {
         type: 'time',
         splitLine: {
-            show: true
+            show: false
         }
     },
     yAxis: {
@@ -85,30 +91,34 @@ option = {
         type: 'line',
         showSymbol: false,
         hoverAnimation: false,
+        symbol: 'circle',
         data: dataFinal[0]
     }, {
         name: 'Faults',
         type: 'line',
         showSymbol: false,
         hoverAnimation: false,
+        symbol: 'circle',
         data: dataFinal[1]
     }, {
         name: 'Changes',
         type: 'line',
         showSymbol: false,
         hoverAnimation: false,
+        symbol: 'circle',
         data: dataFinal[2]
     }, {
         name: 'Alarms',
         type: 'line',
         showSymbol: false,
         hoverAnimation: false,
+        symbol: 'circle',
         data: dataFinal[3]
     }
     ]
 };
 
-function drawChart(chart){
+function drawChart(chart) {
     console.log(option);
     chart.setOption(option);
 }

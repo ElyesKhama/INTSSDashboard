@@ -9,11 +9,11 @@ var json = {
     "report": [{
         "team": "tss",
         "incidents": [
-            { "summary": "INC1111", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-10T15:00:00" },
-            { "summary": "INC1", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-10T14:14:00" },
+            { "summary": "INC1111", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-10T18:00:00" },
+            { "summary": "INC1", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-10T19:14:00" },
             { "summary": "INC1", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-11T00:02:00" },
             { "summary": "INC1", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-11T07:02:00" },
-            { "summary": "INC18", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-10T10:02:00" }
+            { "summary": "INC18", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-10T19:02:00" }
         ],
         "faults": [
             { "summary": "FAU1", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-10T18:01:00" },
@@ -23,7 +23,7 @@ var json = {
         "changes": [
             { "summary": "CHA1", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-10T17:00:00" },
             { "summary": "CHA1", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-10T23:00:00" },
-            { "summary": "CHA3", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-10T15:00:00" }
+            { "summary": "CHA3", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-10T17:00:00" }
         ],
         "alarms": [
             { "summary": "ALA1", "assignee": "TSS", "priority": "Medium", "SLA": "2018-09-10T17:00:00" },
@@ -34,9 +34,9 @@ var json = {
     {
         "team": "int",
         "incidents": [
-            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-10T13:00:00" },
-            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-10T14:00:00" },
-            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-10T15:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-10T18:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-10T17:00:00" },
+            { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-10T20:00:00" },
             { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-10T23:00:00" },
             { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-10T22:00:00" },
             { "summary": "INC1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-10T21:00:00" },
@@ -58,7 +58,7 @@ var json = {
         ],
         "changes": [
             { "summary": "CHA1", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-10T23:00:00" },
-            { "summary": "CHA2", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-10T13:00:00" },
+            { "summary": "CHA2", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-11T13:00:00" },
             { "summary": "CHA3", "assignee": "INT", "priority": "Medium", "SLA": "2018-09-11T00:00:00" }
         ],
         "alarms": [
@@ -72,11 +72,11 @@ var json = {
         "faults": [
         ],
         "changes": [
-            { "summary": "CHA1", "assignee": "PPS", "priority": "Medium", "SLA": "2018-09-10T13:00:00" },
-            { "summary": "CHA2", "assignee": "PPS", "priority": "Medium", "SLA": "2018-09-10T14:00:00" }
+            { "summary": "CHA1", "assignee": "PPS", "priority": "Medium", "SLA": "2018-09-10T18:00:00" },
+            { "summary": "CHA2", "assignee": "PPS", "priority": "Medium", "SLA": "2018-09-10T21:00:00" }
         ],
         "alarms": [
-            { "summary": "ALA1", "assignee": "PPS", "priority": "Medium", "SLA": "2018-09-10T15:00:00" }
+            { "summary": "ALA1", "assignee": "PPS", "priority": "Medium", "SLA": "2018-09-10T20:00:00" }
         ]
     },
     {
@@ -85,7 +85,7 @@ var json = {
             { "summary": "INC1", "assignee": "RTI", "priority": "Medium", "SLA": "2018-09-10T19:00:00" }
         ],
         "faults": [
-            { "summary": "FAU1", "assignee": "RTI", "priority": "Medium", "SLA": "2018-09-10T17:00:00" },
+            { "summary": "FAU1", "assignee": "RTI", "priority": "Medium", "SLA": "2018-09-10T23:00:00" },
             { "summary": "FAU2", "assignee": "RTI", "priority": "Medium", "SLA": "2018-09-11T07:00:00" }
         ],
         "changes": [
@@ -95,7 +95,7 @@ var json = {
         ],
         "alarms": [
             { "summary": "ALA1", "assignee": "RTI", "priority": "Medium", "SLA": "2018-09-11T02:00:00" },
-            { "summary": "ALA2", "assignee": "RTI", "priority": "Medium", "SLA": "2018-09-10T15:00:00" }
+            { "summary": "ALA2", "assignee": "RTI", "priority": "Medium", "SLA": "2018-09-10T22:00:00" }
         ]
     }
     ],
@@ -105,7 +105,7 @@ var json = {
 /*-------- constants  -------- */
 const listTitles = ['incidents', 'faults', 'changes', 'alarms'];
 const listTeams = ['TSS', 'INT', 'PPS', 'RTI'];
-const delay = 15500;
+const delay = 15300;
 const nbMaxItems = 6;
 
 /*-------- functions  -------- */
@@ -130,23 +130,26 @@ function updateProgressBar() {
 }
 
 function updateTitleTimer(way) {
-    // at the middle of the delay : hide the main container and print the graph
-    timeOutGraph = setTimeout(function () {
-        document.getElementById('mainContainer').style.visibility = "hidden";
-        createGraph();
-    }, delay / 2);
-
+    launchTimeOutGraph();
     updateIndex(way);
     updateTimeRefresh();
     updateTitle();
     updateTables(index);
     resetProgressBar();
-    if (firstTimer == false) {
+    if (firstTimer == false) {  //not the first time
         removeGraph();
         document.getElementById('mainContainer').style.visibility = "visible";
     }
     //  setIntervalUpdate();
     firstTimer = false;
+}
+
+function launchTimeOutGraph() {
+    // at the middle of the delay : hide the main container and print the graph
+    timeOutGraph = setTimeout(function () {
+        document.getElementById('mainContainer').style.visibility = "hidden";
+        createGraph();
+    }, delay / 2);
 }
 
 function updateIndex(way) {
@@ -406,12 +409,8 @@ document.addEventListener('keydown', function (e) {
             setIntervalUpdate(+1);
             break;
         case upArrow:
-            document.getElementById('mainContainer').style.visibility = "hidden";
-            createGraph();
             break;
         case downArrow:
-            document.getElementById('mainContainer').style.visibility = "visible";
-            removeGraph();
             break;
         default:
             break;
