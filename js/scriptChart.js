@@ -6,6 +6,7 @@ const numberOrigin = -10;
 //move this global variables
 var valueUpdate = [0,20,10,15];
 var valueUpdate22 = 20;
+var option;
 
 // based on prepared DOM, initialize echarts instance
 //var myChart = echarts.init(document.getElementById('chartEvolution'));

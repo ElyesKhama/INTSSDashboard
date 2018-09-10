@@ -1,11 +1,10 @@
-//global variables
+/* -------- global variables -------- */
 var timeoutIDProgressBar;
 var timeoutIDTimer;
 var timeOutGraph;
 var index = 0;
 var first = true;
 var firstTimer = true;
-
 var json = {
     "report": [{
         "team": "tss",
@@ -103,13 +102,79 @@ var json = {
     "date": "2018-28-08 08:39:44"
 };
 
-//constants
+/*-------- constants  -------- */
 const listTitles = ['incidents', 'faults', 'changes', 'alarms'];
 const listTeams = ['TSS', 'INT', 'PPS', 'RTI'];
 const delay = 15500;
 const nbMaxItems = 6;
 
+/*-------- functions  -------- */
+function setIntervalUpdate(way) {
+    //periodic function
+    updateProgressBar();
+    timeoutIDProgressBar = window.setInterval(updateProgressBar, (delay - 650) / 1000);
+
+    updateTitleTimer(way);
+    timeoutIDTimer = window.setInterval(updateTitleTimer, delay, way);
+}
+
+function updateProgressBar() {
+    var progressBar = document.getElementById("progressBar");
+    // console.log(progressBar.style.width);
+    //recov the width without the % and into an int
+    widthProgressBar = parseFloat(progressBar.style.width.substr(0, progressBar.style.width.length - 1));
+    //set the width : +1%
+    progressBar.style.width = widthProgressBar + 0.1 + "%";
+    //set the aria value now attribute (same as width)
+    progressBar.setAttribute("aria-valuenow", progressBar.style.width);
+}
+
+function updateTitleTimer(way) {
+    // at the middle of the delay : hide the main container and print the graph
+    timeOutGraph = setTimeout(function () {
+        document.getElementById('mainContainer').style.visibility = "hidden";
+        createGraph();
+    }, delay / 2);
+
+    updateIndex(way);
+    updateTimeRefresh();
+    updateTitle();
+    updateTables(index);
+    resetProgressBar();
+    if (firstTimer == false) {
+        removeGraph();
+        document.getElementById('mainContainer').style.visibility = "visible";
+    }
+    //  setIntervalUpdate();
+    firstTimer = false;
+}
+
+function updateIndex(way) {
+    //going to the left 
+    if (way == -1) {
+        if (index == 0) {
+            index = 4;
+        }
+        index--;
+    }
+    else {      //going to the right 
+        if (firstTimer == false) {
+            index++;
+            if (index == 4) {
+                index = 0;
+            }
+        }
+    }
+}
+
+function updateTimeRefresh() {
+    var span = document.getElementById("timeRefresh");
+    var date = new Date();
+    span.innerText = date.toTimeString().substr(0, 8);  //to only have hour:minutes:seconds
+}
+
 function updateTitle() {
+    console.log("index :" + index);
     var elem;
     //make all titles normal again
     for (var i = 0; i < 4; i++) {
@@ -124,7 +189,7 @@ function updateTitle() {
     elemTitle.style.fontSize = "50px";
 }
 
-function updateTables2(index) {
+function updateTables(index) {
 
     var countTimer = 0;
 
@@ -291,7 +356,6 @@ function initializeClock(id, endtime) {
              clearInterval(timeinterval);
          } */
     }
-
     updateClock();
     var timeinterval = setInterval(updateClock, 1000);
 }
@@ -319,72 +383,10 @@ function updateColor(time, clockDiv) {
     clockDiv.style.backgroundColor = palette[indexPalette];
 }
 
-function updateTimeRefresh() {
-    var span = document.getElementById("timeRefresh");
-    var date = new Date();
-    span.innerText = date.toTimeString().substr(0, 8);  //to only have hour:minutes:seconds
-}
-
 function resetProgressBar() {
     var progressBar = document.getElementById("progressBar");
     progressBar.style.width = "0%";
     progressBar.setAttribute("aria-valuenow", 0);
-}
-
-function updateProgressBar() {
-    var progressBar = document.getElementById("progressBar");
-    // console.log(progressBar.style.width);
-    //recov the width without the % and into an int
-    widthProgressBar = parseFloat(progressBar.style.width.substr(0, progressBar.style.width.length - 1));
-    //set the width : +1%
-    progressBar.style.width = widthProgressBar + 0.1 + "%";
-    //set the aria value now attribute (same as width)
-    progressBar.setAttribute("aria-valuenow", progressBar.style.width);
-}
-
-function updateTitleTimer(way) {       //TODO: Factorize
-
-    timeOutGraph = setTimeout(function () {
-    document.getElementById('mainContainer').style.visibility = "hidden";
-    createGraph();
-    }, delay / 2);
-
-    if (way == -1) {
-        if (index == 0) {
-            index = 4;
-        }
-        index--;
-    }
-    else {
-        if (firstTimer == false) {
-            index++;
-            if (index == 4) {
-                index = 0;
-            }
-        }
-    }
-
-    updateTimeRefresh();
-    updateTitle();
-    updateTables2(index);
-    resetProgressBar();
-    console.log(firstTimer);
-    if (firstTimer == false) {
-        console.log("aaaa");
-        removeGraph();
-        document.getElementById('mainContainer').style.visibility = "visible";
-    }
-    //  setIntervalUpdate();
-    firstTimer = false;
-}
-
-function setIntervalUpdate() {
-    //periodic function
-    updateProgressBar();
-    timeoutIDProgressBar = window.setInterval(updateProgressBar, (delay - 500) / 1000);
-
-    updateTitleTimer();
-    timeoutIDTimer = window.setInterval(updateTitleTimer, delay);
 }
 
 document.addEventListener('keydown', function (e) {
@@ -396,14 +398,12 @@ document.addEventListener('keydown', function (e) {
 
     switch (keyCode) {
         case leftArrow:
-            updateTitleTimer(-1);
+            clearTimers();
+            setIntervalUpdate(-1);
             break;
         case rightArrow:
-            updateTitleTimer(+1);
-            window.clearInterval(timeoutIDProgressBar);
-            window.clearInterval(timeoutIDTimer);
-            clearTimeout(timeOutGraph);
-            setIntervalUpdate();
+            clearTimers();
+            setIntervalUpdate(+1);
             break;
         case upArrow:
             document.getElementById('mainContainer').style.visibility = "hidden";
@@ -418,6 +418,11 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
+function clearTimers() {
+    clearTimeout(timeOutGraph);
+    window.clearInterval(timeoutIDProgressBar);
+    window.clearInterval(timeoutIDTimer);
+}
 
 //create the graph element and add it to the body
 function createGraph() {
@@ -440,14 +445,13 @@ function createGraph() {
 }
 
 function removeGraph() {
-    console.log("je remove le graph");
-    var graph = document.getElementById("chartEvolution");
-    console.log(graph);
-    graph.parentNode.removeChild(graph);
+    if (document.getElementById("chartEvolution") != null) {
+        var graph = document.getElementById("chartEvolution");
+        graph.parentNode.removeChild(graph);
+    }
 }
 
 function changeColor() {
-
     var backgroundColor = getComputedStyle(document.getElementById("mainContainer")).backgroundColor;
     var tablesContainer = document.getElementsByClassName("tableContainer");
 
@@ -459,7 +463,7 @@ function changeColor() {
         document.body.style.backgroundColor = "white";
         document.body.style.color = "black";
     }
-    else {      //background is white
+    else {//background is white
         document.getElementById("mainContainer").style.backgroundColor = "black";
         [].forEach.call(tablesContainer, function (el) {
             el.style.color = "white";
@@ -473,4 +477,4 @@ document.getElementById("buttonChangeTheme").onclick = function () {
     changeColor();
 }
 
-setIntervalUpdate();
+setIntervalUpdate(1);
