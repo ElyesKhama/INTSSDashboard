@@ -119,7 +119,6 @@ option = {
 };
 
 function drawChart(chart) {
-    console.log(option);
     chart.setOption(option);
 }
 
