@@ -40,7 +40,6 @@ function calculateData() {
 
     for (var i = 0; i < 24 * 2 * 20; i++) {
         var dateTmp = new Date(date.setMinutes(date.getMinutes() + 30));            //TODO: Factorize
-
         calculateRandomNumber();
 
         var objs = [];

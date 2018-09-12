@@ -109,9 +109,13 @@ body{
 	text-align: center;
 	-webkit-animation: scale-up-center 1s linear both;
 	animation: scale-up-center 1s linear both;
-  }
+	}
+	
+.blinking{
+	animation : blink 1s infinite ease-out;
+}
   
-  @-webkit-keyframes scale-up-center {
+  	@-webkit-keyframes scale-up-center {
 	0% {
 	  -webkit-transform: scale(0.5);
 	  transform: scale(0.5);
@@ -131,5 +135,26 @@ body{
 	  -webkit-transform: scale(1);
 	  transform: scale(1);
 	}
-  }
-  
+}
+	
+@-webkit-keyframes blink { 
+	0%   {
+			 background-color: black;
+			 color:white; 
+			}
+	100% { 
+			background-color: red; 
+			color:black
+			} 
+}
+
+@keyframes blink { 
+	0%   {
+		background-color: black;
+		color:white; 
+	 }
+100% { 
+	 background-color: red; 
+	 color:black
+	 } 
+}
